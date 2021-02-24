@@ -29,7 +29,7 @@ class App extends React.Component {
           </button>
 
           <br />
-          A soma dos 2 numesros é: {this.state.resultado}
+          A soma dos 2 numeros é: {this.state.resultado}
       </div>
     )
   }
