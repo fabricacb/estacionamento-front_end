@@ -2,8 +2,7 @@ import React from 'react'
 import Card from '../components/card'
 import FormGroup from '../components/form-group'
 import { withRouter } from 'react-router-dom' 
-
-import axios from 'axios'
+import FuncionarioService from '../app/service/funcionarioService'
 
 class Login extends React.Component{
     state = {
@@ -11,10 +10,15 @@ class Login extends React.Component{
         senha: ''
     }
 
+    constructor(){
+        super();
+        this.service = new FuncionarioService();
+    }
+
     entrar = () => {
-        axios.post('http://localhost:8080/funcionarios/autenticar',{
-                    email: this.state.email,
-                    senha: this.state.senha
+        this.service.autenticar({
+            email: this.state.email,
+            senha: this.state.senha
         }).then ( response => {
             console.log( response )
         }).catch( erro => {

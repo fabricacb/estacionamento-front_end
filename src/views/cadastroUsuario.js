@@ -2,6 +2,10 @@ import React from 'react'
 import Card from '../components/card'
 import FormGroup from '../components/form-group'
 import { withRouter } from 'react-router-dom'
+
+import FuncionarioService from '../app/service/funcionarioService'
+
+
 class Cadastro extends React.Component{
 
     state = {
@@ -11,8 +15,25 @@ class Cadastro extends React.Component{
         senhaRepeticao: ''
     }
 
+    constructor(){
+    super();
+    this.service = new FuncionarioService();
+    }
+
     cadastrar = () => {
-        console.log(this.state)
+
+        const funcionario = {
+            nome : this.state.nome,
+            email: this.state.email,
+            senha : this.state.senha
+        }
+
+       this.service.salvar(funcionario)
+            .then( response => {
+                this.props.history.push('/login')
+            }).catch(error => {
+                document.write(error.response.data)
+            })
     }
 
     prepararLogin = () => {
