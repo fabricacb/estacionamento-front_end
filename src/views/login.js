@@ -20,7 +20,7 @@ class Login extends React.Component{
             email: this.state.email,
             senha: this.state.senha
         }).then ( response => {
-            this.props.history.push('/cadastro')
+            this.props.history.push('/consultafuncionario')
         }).catch( erro => {
             mensagemErro(erro.response.data)
         })
