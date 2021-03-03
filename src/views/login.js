@@ -3,7 +3,7 @@ import Card from '../components/card'
 import FormGroup from '../components/form-group'
 import { withRouter } from 'react-router-dom' 
 import FuncionarioService from '../app/service/funcionarioService'
-
+import { mensagemErro } from '../components/toastr'
 class Login extends React.Component{
     state = {
         email: '',
@@ -20,9 +20,9 @@ class Login extends React.Component{
             email: this.state.email,
             senha: this.state.senha
         }).then ( response => {
-            console.log( response )
+            this.props.history.push('/cadastro')
         }).catch( erro => {
-            console.log( erro.response )
+            mensagemErro(erro.response.data)
         })
     }
 

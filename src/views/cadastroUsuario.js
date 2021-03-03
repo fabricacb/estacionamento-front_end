@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '../components/card'
 import FormGroup from '../components/form-group'
 import { withRouter } from 'react-router-dom'
+import { mensagemErro } from '../components/toastr'
 
 import FuncionarioService from '../app/service/funcionarioService'
 
@@ -32,7 +33,7 @@ class Cadastro extends React.Component{
             .then( response => {
                 this.props.history.push('/login')
             }).catch(error => {
-                document.write(error.response.data)
+                mensagemErro(error.response.data)
             })
     }
 
