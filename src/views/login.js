@@ -56,6 +56,8 @@ class Login extends React.Component{
 
                                         <button onClick={this.entrar} className="btn btn-success">Entrar</button>
                                         <button onClick={this.prepararCadastrar} className="btn btn-danger">Cadastrar</button>
+                                        <br />
+                                        <a href="http://localhost:3000/#/login">Esqueci minha senha.</a>
                                     </fieldset>
                                 </div>
                             </div>
