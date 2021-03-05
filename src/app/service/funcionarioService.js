@@ -13,6 +13,8 @@ class FuncionarioService extends ApiService{
     salvar(funcionario){
         return this.post('/', funcionario);
     }
+
+  
 }
 
 export default FuncionarioService

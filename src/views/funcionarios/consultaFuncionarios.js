@@ -6,7 +6,15 @@ import Table from './table'
 
 class ConsultaFuncionarios extends React.Component{
 
+
+    
+    
     render(){
+
+        const funcionarios = [
+            { nome : 'alefe', email : 'alefepdias@gmail.com', numero : 1}
+        ]
+
         return(
             <Card title="Consultar Funcionarios">
                 <div className="row">
@@ -22,7 +30,7 @@ class ConsultaFuncionarios extends React.Component{
                 <div className="row">
                     <div className="col-md-12">
                         <div className="bs-component">
-                            <Table />
+                            <Table funcionarios={funcionarios}/>
                         </div>
                     </div>
                 </div>

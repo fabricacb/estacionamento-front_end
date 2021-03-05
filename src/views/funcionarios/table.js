@@ -2,12 +2,13 @@ import React from "react"
 
 export default props => {
 
+    
     const rows = props.funcionarios.map( funcionario => {
         return(
             <tr>
-                <td>{funcionarios.nome}</td>
-                <td>{funcionarios.email}</td>
-                <td>{funcionarios.numero}</td>
+                <td>{funcionario.nome}</td>
+                <td>{funcionario.email}</td>
+                <td>{funcionario.numero}</td>
             </tr>
         )
     })
